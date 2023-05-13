@@ -10,14 +10,16 @@ public sealed class HeartPresenter
         _model = model;
         _view = view;
     }
-
+    
+    //Підписуємо на event View модель
     public void Enable()
     {
         _view.OnMoveButtonClicked += _model.OnMove;
         _view.OnRotateButtonClicked += _model.OnRotate;
         _view.OnScaleButtonClicked += _model.OnScale;
     }
-
+    
+    //Відписуємось на event View модель
     public void Disable()
     {
         _view.OnMoveButtonClicked -= _model.OnMove;
